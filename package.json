@@ -1,7 +1,7 @@
 {
-  "name": "en-sync",
+  "name": "ensync-website",
   "version": "0.0.0",
-  "description": "Small description for en-sync goes here",
+  "description": "enSync ember website",
   "private": true,
   "directories": {
     "doc": "doc",
