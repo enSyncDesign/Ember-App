@@ -1,6 +1,30 @@
-<h1 id="title">Welcome to enSync</h1>
-<a>{{ link-to "Home" "home" }}</a>
-<a>{{ link-to "About Us" "about-us" }}</a>
-<a>{{ link-to "Product" "product" }}</a>
+{{#paper-nav-container class="site-nav-container"}}
+  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" locked-open="sm"}}
+    {{#paper-toolbar class="side-menu"}}
+      <div class="md-toolbar-tools">
+        <img src="assets/images/ensync.png" class="side-logo">
+      </div>
+    {{/paper-toolbar}}
+    {{#paper-content class="side-content"}}
+      {{#paper-list}}
+        {{#paper-item action=(transition-to "home") class="side-content-item"}}<strong>Home</strong>{{/paper-item}}
+        {{#paper-item action=(transition-to "about-us") class="side-content-item"}}<strong>About Us</strong>{{/paper-item}}
+        {{#paper-item action=(transition-to "product") class="side-content-item"}}<strong>Product</strong>{{/paper-item}}
+      {{/paper-list}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
 
-{{outlet}}
+  <div layout="column" tabindex="-1" role="main" flex>
+    {{#paper-toolbar class="main-menu"}}
+      <div class="md-toolbar-tools">
+        {{#paper-sidenav-toggle as |toggle|}}
+          {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+        {{/paper-sidenav-toggle}}
+      </div>
+    {{/paper-toolbar}}
+
+    {{#paper-content classNames="md-padding main-content"}}
+      {{outlet}}
+    {{/paper-content}}
+  </div>
+{{/paper-nav-container}}
