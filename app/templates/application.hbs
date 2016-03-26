@@ -1,5 +1,5 @@
 {{#paper-nav-container class="site-nav-container"}}
-  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" locked-open="sm"}}
+  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" locked-open="false"}}
     {{#paper-toolbar class="side-menu"}}
       <div class="md-toolbar-tools">
         <img src="assets/images/ensync.png" class="side-logo">
@@ -8,8 +8,11 @@
     {{#paper-content class="side-content"}}
       {{#paper-list}}
         {{#paper-item action=(transition-to "home") class="side-content-item"}}<strong>Home</strong>{{/paper-item}}
+        {{paper-divider}}
         {{#paper-item action=(transition-to "about-us") class="side-content-item"}}<strong>About Us</strong>{{/paper-item}}
+        {{paper-divider}}
         {{#paper-item action=(transition-to "product") class="side-content-item"}}<strong>Product</strong>{{/paper-item}}
+        {{paper-divider}}
       {{/paper-list}}
     {{/paper-content}}
   {{/paper-sidenav}}
@@ -18,8 +21,20 @@
     {{#paper-toolbar class="main-menu"}}
       <div class="md-toolbar-tools">
         {{#paper-sidenav-toggle as |toggle|}}
-          {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+          {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{fa-icon "bars" size="lg"}}{{/paper-button}}
         {{/paper-sidenav-toggle}}
+          {{#paper-item action=(transition-to "") class="main-social-media-first"}}
+            {{fa-icon "facebook-square" size=2
+                                        title="EnSync Facebook page"}}
+          {{/paper-item}}
+          {{#paper-item action=(transition-to "") class="main-social-media"}}
+            {{fa-icon "linkedin-square" size=2
+                                        title="EnSync LinkedIn page"}}
+          {{/paper-item}}
+          {{#paper-item action=(transition-to "") class="main-social-media"}}
+            {{fa-icon "github-square" size=2
+                                      title="EnSync Github page"}}
+          {{/paper-item}}
       </div>
     {{/paper-toolbar}}
 
