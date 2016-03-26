@@ -27,6 +27,16 @@ html, body {
     background-color: #E8E8E8!important;
     padding-top: 50px;
   }
+
+  &-social-media {
+    cursor: pointer;
+    margin-left: -40px;
+
+    &-first {
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
 }
 
 // Side
