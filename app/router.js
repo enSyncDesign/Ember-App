@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('home');
   this.route('about-us');
   this.route('product');
+  this.route('contact');
 });
 
 export default Router;
