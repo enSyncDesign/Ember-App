@@ -1,8 +1,10 @@
 @import 'ember-paper';
+@import 'fonts';
 
 html, body {
   background-color: #E8E8E8;
   width: 100%;
+  font-family: Roboto;
 }
 
 .md-sidenav {
@@ -20,7 +22,7 @@ html, body {
 .main {
   &-menu {
     position: fixed;
-    background-color: #1A1A1A !important;
+    background-color: #222 !important;
   }
 
   &-content {
@@ -42,7 +44,7 @@ html, body {
 // Side
 .side {
   &-menu {
-    background-color: #1A1A1A !important;
+    background-color: #222 !important;
   }
 
   &-content {
@@ -53,9 +55,71 @@ html, body {
     }
   }
 
+  &-footer {
+    background-color: #222 !important;
+    color: #7B7B7B;
+    font-size: 14px;
+
+    &-span{
+      margin-left: auto;
+      margin-right: auto;
+
+      &-first {
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
   &-logo {
     height: 58px;
     margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 20px;
+  }
+}
+
+// Index
+
+.index {
+  &-content {
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+  }
+}
+
+// Home
+
+.home {
+  &-content {
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+  }
+}
+
+// About US
+
+.about-us {
+  &-content {
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+  }
+}
+
+// Product
+
+.product {
+  &-content {
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
+  }
+}
+
+// Contact
+
+.contact {
+  &-content {
+    padding: 10px 10px 10px 10px;
+    margin-top: 30px;
   }
 }

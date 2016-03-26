@@ -1,20 +1,28 @@
 {{#paper-nav-container class="site-nav-container"}}
   {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" locked-open="false"}}
     {{#paper-toolbar class="side-menu"}}
-      <div class="md-toolbar-tools">
-        <img src="assets/images/ensync.png" class="side-logo">
-      </div>
+      {{#paper-item action=(transition-to "index")}}
+        <div class="md-toolbar-tools">
+          <img src="assets/images/ensync.png" class="side-logo">
+        </div>
+      {{/paper-item}}
     {{/paper-toolbar}}
     {{#paper-content class="side-content"}}
       {{#paper-list}}
         {{#paper-item action=(transition-to "home") class="side-content-item"}}<strong>Home</strong>{{/paper-item}}
         {{paper-divider}}
-        {{#paper-item action=(transition-to "about-us") class="side-content-item"}}<strong>About Us</strong>{{/paper-item}}
+        {{#paper-item action=(transition-to "about-us") class="side-content-item"}}<strong>About us</strong>{{/paper-item}}
         {{paper-divider}}
         {{#paper-item action=(transition-to "product") class="side-content-item"}}<strong>Product</strong>{{/paper-item}}
         {{paper-divider}}
+        {{#paper-item action=(transition-to "contact") class="side-content-item"}}<strong>Contact</strong>{{/paper-item}}
+        {{paper-divider}}
       {{/paper-list}}
     {{/paper-content}}
+    {{#paper-toolbar class="side-footer"}}
+      <span class="side-footer-span-first">Copyright {{fa-icon "copyright"}} 2016 <strong>EnSync</strong>.</span>
+      <span class="side-footer-span">All rights reserved.</span>
+    {{/paper-toolbar}}
   {{/paper-sidenav}}
 
   <div layout="column" tabindex="-1" role="main" flex>
