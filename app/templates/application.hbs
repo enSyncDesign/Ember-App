@@ -1,48 +1,78 @@
 {{#paper-nav-container class="site-nav-container"}}
-  {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" locked-open="false"}}
-    {{#paper-toolbar class="side-menu"}}
-      {{#paper-item action=(transition-to "index")}}
-        <div class="md-toolbar-tools">
-          <img src="assets/images/ensync.png" class="side-logo">
-        </div>
-      {{/paper-item}}
-    {{/paper-toolbar}}
-    {{#paper-content class="side-content"}}
-      {{#paper-list}}
-        {{#paper-item action=(transition-to "home") class="side-content-item"}}<strong>Home</strong>{{/paper-item}}
-        {{paper-divider}}
-        {{#paper-item action=(transition-to "about-us") class="side-content-item"}}<strong>About us</strong>{{/paper-item}}
-        {{paper-divider}}
-        {{#paper-item action=(transition-to "product") class="side-content-item"}}
-          <strong>Product</strong>
-          {{fa-icon "sort-desc" size="2" class="side-content-sort"
-                                         click=(action "isClicked")}}
-        {{/paper-item}}
-        {{paper-divider}}
-        {{#if subMenu}}
-          {{#paper-item action=(transition-to "web-design") class="side-content-subitem"}}<strong>Web Design</strong>{{/paper-item}}
-          {{paper-divider}}
-          {{#paper-item action=(transition-to "hosting") class="side-content-subitem"}}<strong>Hosting</strong>{{/paper-item}}
-          {{paper-divider}}
-          {{#paper-item action=(transition-to "graphic-esign") class="side-content-subitem"}}<strong>Graphic Design</strong>{{/paper-item}}
-          {{paper-divider}}
-        {{/if}}
-        {{#paper-item action=(transition-to "contact") class="side-content-item"}}<strong>Contact</strong>{{/paper-item}}
-        {{paper-divider}}
-      {{/paper-list}}
-    {{/paper-content}}
-    {{#paper-toolbar class="side-footer"}}
-      <span class="side-footer-span-first">Copyright {{fa-icon "copyright"}} 2016 <strong>EnSync</strong>.</span>
-      <span class="side-footer-span">All rights reserved.</span>
-    {{/paper-toolbar}}
-  {{/paper-sidenav}}
+  {{#unless media.isJumbo}}
+    {{#unless media.isDesktop}}
+      {{#paper-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" locked-open="false"}}
+        {{#paper-toolbar class="side-menu"}}
+          {{#paper-item action=(transition-to "index")}}
+            <div class="md-toolbar-tools">
+              <img src="assets/images/ensyncLogo.png" class="side-logo">
+            </div>
+          {{/paper-item}}
+        {{/paper-toolbar}}
+        {{#paper-content class="side-content"}}
+          {{#paper-list}}
+            {{#paper-item action=(transition-to "home") class="side-content-item"}}<strong>Home</strong>{{/paper-item}}
+            {{paper-divider}}
+            {{#paper-item action=(transition-to "about-us") class="side-content-item"}}<strong>About us</strong>{{/paper-item}}
+            {{paper-divider}}
+            {{#paper-item class="side-content-item"}}
+              <strong>Product</strong>
+            {{/paper-item}}
+            {{paper-divider}}
+              {{#paper-item action=(transition-to "web-design") class="side-content-subitem"}}<strong>Web Design</strong>{{/paper-item}}
+              {{paper-divider}}
+              {{#paper-item action=(transition-to "hosting") class="side-content-subitem"}}<strong>Hosting</strong>{{/paper-item}}
+              {{paper-divider}}
+              {{#paper-item action=(transition-to "graphic-esign") class="side-content-subitem"}}<strong>Graphic Design</strong>{{/paper-item}}
+              {{paper-divider}}
+            {{#paper-item action=(transition-to "contact") class="side-content-item"}}<strong>Contact</strong>{{/paper-item}}
+            {{paper-divider}}
+          {{/paper-list}}
+        {{/paper-content}}
+        {{#paper-toolbar class="side-footer"}}
+          <span class="side-footer-span-first">Copyright {{fa-icon "copyright"}} 2016 <strong>EnSync</strong>.</span>
+          <span class="side-footer-span">All rights reserved.</span>
+        {{/paper-toolbar}}
+      {{/paper-sidenav}}
+    {{/unless}}
+  {{/unless}}
 
   <div layout="column" tabindex="-1" role="main" flex>
     {{#paper-toolbar class="main-menu"}}
       <div class="md-toolbar-tools">
-        {{#paper-sidenav-toggle as |toggle|}}
-          {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{fa-icon "bars" size="2" class="main-menu-icon"}}{{/paper-button}}
-        {{/paper-sidenav-toggle}}
+        {{#unless media.isJumbo}}
+          {{#unless media.isDesktop}}
+            {{#paper-sidenav-toggle as |toggle|}}
+              {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{fa-icon "bars" size="2" class="main-menu-icon"}}{{/paper-button}}
+            {{/paper-sidenav-toggle}}
+          {{/unless}}
+        {{/unless}}
+        {{#unless media.isMobile}}
+          {{#unless media.isTablet}}
+              {{#paper-item action=(transition-to "index")}} <img src="assets/images/ensyncLogo.png" class="main-menu-logo">{{/paper-item}}
+              {{#paper-item action=(transition-to "home")}}<strong>Home</strong>{{/paper-item}}
+              {{paper-divider}}
+              {{#paper-item action=(transition-to "about-us")}}<strong>About us</strong>{{/paper-item}}
+              {{paper-divider}}
+              {{#paper-item action="isClicked"}}
+                <strong>Product</strong>
+                {{fa-icon "sort-desc" size="2"}}
+              {{/paper-item}}
+              {{paper-divider}}
+              {{#if subMenu}}
+                {{#paper-list}}
+                  {{#paper-item action=(transition-to "web-design")}}<strong>Web Design</strong>{{/paper-item}}
+                  {{paper-divider}}
+                  {{#paper-item action=(transition-to "hosting")}}<strong>Hosting</strong>{{/paper-item}}
+                  {{paper-divider}}
+                  {{#paper-item action=(transition-to "graphic-esign")}}<strong>Graphic Design</strong>{{/paper-item}}
+                  {{paper-divider}}
+                {{/paper-list}}
+              {{/if}}
+              {{#paper-item action=(transition-to "contact") class="side-content-item"}}<strong>Contact</strong>{{/paper-item}}
+              {{paper-divider}}
+          {{/unless}}
+        {{/unless}}
           {{#paper-item class="main-social-media-first"}}
             {{fa-icon "facebook-square" size=2
                                         title="EnSync Facebook page"
