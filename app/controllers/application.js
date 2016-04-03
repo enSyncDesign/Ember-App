@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
 
   actions: {
     isClicked() {
-      let subMenu = get(this, 'subMenu')
+      let subMenu = get(this, 'subMenu');
 
       if (subMenu) {
         set(this, 'subMenu', false);
@@ -19,15 +19,15 @@ export default Ember.Controller.extend({
     },
 
     transitionToFacebook() {
-      window.open('www.facebook.com')
+      window.open('www.facebook.com');
     },
 
     transitionToLinkedIn() {
-      window.open('www.LinkedIn.com')
+      window.open('www.LinkedIn.com');
     },
 
     transitionToGithub() {
-      window.open('www.Github.com')
+      window.open('www.Github.com');
     }
   }
 });

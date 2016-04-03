@@ -23,16 +23,49 @@ html, body {
 .main {
   &-menu {
     position:         fixed;
-    height:           75px;
     background-image: linear-gradient(#BB291F, rgb(80, 8, 2)) !important;
 
-    &-icon {
-      padding-top: 15px;
+    &-dropdown {
+      margin-left: 5px;
+      margin-top:  0px;
     }
 
-    &-logo {
-      width:      150px;
-      margin-top: 5px;
+    &-content {
+      width: 500px;
+    }
+
+    &-icon {
+      margin-top: 10px;
+    }
+
+    &-header {
+      &-mobile {
+        margin-left:  auto;
+        margin-right: auto;
+      }
+      &-logo {
+        width: 150px;
+      }
+    }
+
+    &-items {
+      width: 100%;
+      &-buttons {
+        float: right;
+        &-text {
+          margin-left: -15px;
+        }
+        &-fa {
+          margin-left: 85px;
+          margin-top:  -37px;
+        }
+        &-products {
+          position:         absolute;
+          width:            200px;
+          background-image: linear-gradient(#500802, #BB291F) !important;
+          margin-left:      400px;
+          }
+      }
     }
   }
 
@@ -87,19 +120,24 @@ html, body {
 
 // Side
 .side {
+  width:     500px;
+  max-width: 500px;
+
   &-menu {
-    height:           75px;
+    height:           150px;
     background-image: linear-gradient(#BB291F, rgb(80, 8, 2)) !important;
   }
 
   &-content {
     min-height:       100%;
-    margin-bottom:    -139px;
+    margin-bottom:    -214px;
     background-color: #FFF!important;
 
     &-subitem {
       background-color: #EEE!important;
-      padding-left:     40px;
+      &-text {
+        padding-left: 40px;
+      }
     }
 
     &-sort {
@@ -127,9 +165,10 @@ html, body {
   }
 
   &-logo {
-    width:       150px;
-    margin-left: 20px;
-    margin-top:  5px;
+    margin-top: 70px;
+    &-specs {
+      width: 150px;
+    }
   }
 }
 
