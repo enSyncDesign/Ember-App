@@ -1,7 +1,7 @@
 {{#paper-nav-container class="site-nav-container"}}
   {{#unless media.isJumbo}}
     {{#unless media.isDesktop}}
-      {{#paper-sidenav class="side md-sidenav-left md-whiteframe-z2 site-sidenav" locked-open="false"}}
+      {{#paper-sidenav class="side md-sidenav-left md-whiteframe-z2 site-sidenav" locked-open="gt"}}
         {{#paper-toolbar class="side-menu"}}
           {{#paper-item action=(transition-to "index") class="side-logo"}}
             <div class="md-toolbar-tools">
@@ -16,7 +16,7 @@
             {{#paper-item action=(transition-to "about-us") class="side-content-item"}}<strong>About us</strong>{{/paper-item}}
             {{paper-divider}}
             {{#paper-item class="side-content-item"}}
-              <strong>Product</strong>
+              <strong>Services</strong>
             {{/paper-item}}
             {{paper-divider}}
               {{#paper-item action=(transition-to "web-design") class="side-content-subitem"}}<strong class="side-content-subitem-text">Web Design</strong>{{/paper-item}}
@@ -29,10 +29,6 @@
             {{paper-divider}}
           {{/paper-list}}
         {{/paper-content}}
-        <!-- {{#paper-toolbar class="side-footer"}}
-          <span class="side-footer-span-first">Copyright {{fa-icon "copyright"}} 2016 <strong>EnSync</strong>.</span>
-          <span class="side-footer-span">All rights reserved.</span>
-        {{/paper-toolbar}}-->
       {{/paper-sidenav}}
     {{/unless}}
   {{/unless}}
@@ -58,23 +54,28 @@
             <div class="main-menu-items">
               {{#paper-button action=(transition-to "contact") class="main-menu-items-buttons"}}<strong>Contact</strong>{{/paper-button}}
               {{#paper-button action="isClicked" class="main-menu-items-buttons"}}
-                <strong class="main-menu-items-buttons-text">Products</strong>
+                <strong class="main-menu-items-buttons-text">Services</strong>
                 <div class="main-menu-items-buttons-fa">
                   {{fa-icon "sort-desc" size="2"}}
                 </div>
-              {{#if subMenu}}
-                <div class="main-menu-items-buttons-products">
-                  {{#paper-list}}
-                    {{#paper-button action=(transition-to "web-design")}}<strong>Web Design</strong>{{/paper-button}}
-                    {{#paper-button action=(transition-to "hosting")}}<strong>Hosting</strong>{{/paper-button}}
-                    {{#paper-button action=(transition-to "graphic-esign")}}<strong>Graphic Design</strong>{{/paper-button}}
-                  {{/paper-list}}
-                </div>
-              {{/if}}
               {{/paper-button}}
               {{#paper-button action=(transition-to "about-us") class="main-menu-items-buttons"}}<strong>About us</strong>{{/paper-button}}
               {{#paper-button action=(transition-to "home") class="main-menu-items-buttons"}}<strong>Home</strong>{{/paper-button}}
             </div>
+            {{#if subMenu}}
+              {{#ember-tether target='.main-menu'
+                              targetAttachment='bottom center'
+                              attachment='top center'
+                              class='main-menu-submenu'}}
+                <div class="main-menu-submenu-content">
+                  <div class="main-menu-submenu-content-services">
+                  <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
+                  <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
+                  <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
+                  </div>
+                </div>
+              {{/ember-tether}}
+            {{/if}}
           {{/unless}}
         {{/unless}}
           <!-- {{#paper-item class="main-social-media-first"}}
@@ -94,14 +95,16 @@
           {{/paper-item}}-->
       </div>
     {{/paper-toolbar}}
-
     {{#paper-content classNames="md-padding main-content"}}
       <!-- {{#paper-card class="main-overlay"}}
         <h1 class="main-overlay-tekst">
           Lorem ipsum dolor sit amet?
         </h1>
       {{/paper-card}}-->
-      {{outlet}}
+        {{outlet 'home'}}
+          {{outlet "about-us"}}
+            {{outlet "services"}}
+              {{outlet "contact"}}
     {{/paper-content}}
   </div>
 {{/paper-nav-container}}
