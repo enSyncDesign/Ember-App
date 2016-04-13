@@ -55,9 +55,15 @@
               {{#paper-button action=(transition-to "contact") class="main-menu-items-buttons"}}<strong>Contact</strong>{{/paper-button}}
               {{#paper-button action="isClicked" class="main-menu-items-buttons"}}
                 <strong class="main-menu-items-buttons-text">Services</strong>
-                <div class="main-menu-items-buttons-fa">
-                  {{fa-icon "sort-desc" size="2"}}
-                </div>
+                {{#if subMenu}}
+                  <div class="main-menu-items-buttons-fa-asc">
+                    {{fa-icon "sort-asc" size="2"}}
+                  </div>
+                {{else}}
+                  <div class="main-menu-items-buttons-fa-desc">
+                    {{fa-icon "sort-desc" size="2"}}
+                  </div>
+                {{/if}}
               {{/paper-button}}
               {{#paper-button action=(transition-to "about-us") class="main-menu-items-buttons"}}<strong>About us</strong>{{/paper-button}}
               {{#paper-button action=(transition-to "home") class="main-menu-items-buttons"}}<strong>Home</strong>{{/paper-button}}
@@ -69,9 +75,15 @@
                               class='main-menu-submenu'}}
                 <div class="main-menu-submenu-content">
                   <div class="main-menu-submenu-content-services">
-                  <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
-                  <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
-                  <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
+                    {{#scroll-to href='.about-us-content' duration=500 easing='linear' offset=-75}}
+                      <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
+                    {{/scroll-to}}
+                    {{#scroll-to href='.services-content' duration=500 easing='linear'offset=-75}}
+                      <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
+                    {{/scroll-to}}
+                    {{#scroll-to href='.contact-content' duration=500 easing='linear' offset=-75}}
+                      <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
+                    {{/scroll-to}}
                   </div>
                 </div>
               {{/ember-tether}}
