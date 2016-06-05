@@ -5,7 +5,7 @@
         {{#paper-toolbar class="side-menu"}}
           {{#paper-item action=(transition-to "index") class="side-logo"}}
             <div class="md-toolbar-tools">
-              <img src="assets/images/ensyncLogo.png" class="side-logo-specs">
+              <img src="assets/logos/logo-straight-white.png" class="side-logo-specs">
             </div>
           {{/paper-item}}
         {{/paper-toolbar}}
@@ -42,14 +42,14 @@
               {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{fa-icon "bars" size="2" class="main-menu-icon"}}{{/paper-button}}
             {{/paper-sidenav-toggle}}
             <div class="main-menu-header-mobile">
-              {{#paper-item action=(transition-to "index")}} <img src="assets/images/ensyncLogo.png" class="main-menu-header-logo">{{/paper-item}}
+              {{#paper-item action=(transition-to "index")}} <img src="assets/logos/logo-straight.png" class="main-menu-header-logo">{{/paper-item}}
             </div>
           {{/unless}}
         {{/unless}}
         {{#unless media.isMobile}}
           {{#unless media.isTablet}}
             <div class="main-menu-header">
-              {{#paper-item action=(transition-to "index")}} <img src="assets/images/ensyncLogo.png" class="main-menu-header-logo">{{/paper-item}}
+              {{#paper-item action=(transition-to "index")}} <img src="assets/logos/logo-straight.png" class="main-menu-header-logo">{{/paper-item}}
             </div>
             <div class="main-menu-items">
               {{#paper-button action=(transition-to "contact") class="main-menu-items-buttons"}}<strong>Contact</strong>{{/paper-button}}
@@ -57,11 +57,11 @@
                 <strong class="main-menu-items-buttons-text">Services</strong>
                 {{#if subMenu}}
                   <div class="main-menu-items-buttons-fa-asc">
-                    {{fa-icon "sort-asc" size="2"}}
+                    {{fa-icon "sort-asc" size="lg"}}
                   </div>
                 {{else}}
                   <div class="main-menu-items-buttons-fa-desc">
-                    {{fa-icon "sort-desc" size="2"}}
+                    {{fa-icon "sort-desc" size="lg"}}
                   </div>
                 {{/if}}
               {{/paper-button}}
@@ -74,7 +74,7 @@
                               attachment='top center'
                               class='main-menu-submenu'}}
                 <div class="main-menu-submenu-content">
-                  <div class="main-menu-submenu-content-services">
+                  <!--<div class="main-menu-submenu-content-services">
                     {{#scroll-to href='.about-us-content' duration=500 easing='linear' offset=-75}}
                       <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
                     {{/scroll-to}}
@@ -84,7 +84,7 @@
                     {{#scroll-to href='.contact-content' duration=500 easing='linear' offset=-75}}
                       <img src="assets/images/applePc.png" class="main-menu-submenu-content-services-pc">
                     {{/scroll-to}}
-                  </div>
+                  </div>-->
                 </div>
               {{/ember-tether}}
             {{/if}}
@@ -108,11 +108,6 @@
       </div>
     {{/paper-toolbar}}
     {{#paper-content classNames="md-padding main-content"}}
-      <!-- {{#paper-card class="main-overlay"}}
-        <h1 class="main-overlay-tekst">
-          Lorem ipsum dolor sit amet?
-        </h1>
-      {{/paper-card}}-->
         {{outlet 'home'}}
           {{outlet "about-us"}}
             {{outlet "services"}}
